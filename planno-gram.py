@@ -221,8 +221,8 @@ def predict():
     elif type_value == 'freezer':
         print("freezer type loading...")
         # code to handle the freezer type
-        rf = Roboflow(api_key="Pdy4XQvV81cyQbgyQCL7")
-        project = rf.workspace().project("tilt-bottles")
+        rf = Roboflow(api_key="")
+        project = rf.workspace().project("tilt")
         model = project.version(1).model
 
         try:
