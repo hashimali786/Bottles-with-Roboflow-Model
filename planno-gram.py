@@ -8,8 +8,8 @@ from PIL import Image
 app = Flask(__name__)
 
 # # Replace with your actual Roboflow API key
-# ROBOFLOW_API_KEY = "EoEwiyf5jV8R6QV9BAhk"
-# PROJECT_NAME = "water-bottles-rlbee"
+# ROBOFLOW_API_KEY = ""
+# PROJECT_NAME = "water-bottles"
 # MODEL_VERSION = 1
 #
 # # Initialize Roboflow client
@@ -17,8 +17,8 @@ app = Flask(__name__)
 # project = rf.workspace().project(PROJECT_NAME)
 # model = project.version(MODEL_VERSION).model
 
-# rf = Roboflow(api_key="P9IiYaIfVHvVeY34wk00")
-# project = rf.workspace().project("water_bottles-rdg9v")
+# rf = Roboflow(api_key="")
+# project = rf.workspace().project("water_bottles")
 # model = project.version(2).model
 
 @app.route('/predict', methods=['POST'])
@@ -43,8 +43,8 @@ def predict():
     if type_value == 'singledoor':
         print("singledoor type loading...")
         # code to handle the singledoor type
-        rf = Roboflow(api_key="P9IiYaIfVHvVeY34wk00")
-        project = rf.workspace().project("water_bottles-rdg9v")
+        rf = Roboflow(api_key="")
+        project = rf.workspace().project("water_bottles")
         model = project.version(1).model
 
         try:
@@ -53,10 +53,6 @@ def predict():
 
             # Save the uploaded image temporarily
             image_path = "temp_image.jpg"
-            # directory = '/var/www/html/plan-o-gram/assets/img/'
-            # directory = 'E:/plan-o-gram/berain-plan-o-gram/'
-            # image_path = directory + request.form.get('image')
-            # image_path = '/var/www/html/plan-o-gram/assets/img/' + request.form.get('image')
             image_file.save(image_path)
 
             # Perform prediction
@@ -235,14 +231,6 @@ def predict():
 
             # Save the uploaded image temporarily
             image_path = "temp_image.jpg"
-            # image_path = "pics/fridge00.PNG"
-
-            # directory = '/var/www/html/plan-o-gram/assets/img/'
-            # print(directory)
-            # # directory = 'E:/plan-o-gram/berain-plan-o-gram/'
-            # image_path = directory + request.form.get('image')
-            # print(image_path)
-            # image_path = '/var/www/html/plan-o-gram/assets/img/' + request.form.get('image')
             image_file.save(image_path)
 
             # Perform prediction
@@ -302,14 +290,6 @@ def predict():
 
         # Save the uploaded image temporarily
         image_path = "temp_image.jpg"
-        # image_path = "pics/fridge00.PNG"
-
-        # directory = '/var/www/html/plan-o-gram/assets/img/'
-        # print(directory)
-        # # directory = 'E:/plan-o-gram/berain-plan-o-gram/'
-        # image_path = directory + request.form.get('image')
-        # print(image_path)
-        # image_path = '/var/www/html/plan-o-gram/assets/img/' + request.form.get('image')
         image_file.save(image_path)
 
         # Perform prediction
